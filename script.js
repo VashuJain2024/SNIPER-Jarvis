@@ -1,8 +1,9 @@
 import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
+require('dotenv').config();
 
 const btn = document.querySelector('.talk');
 const content = document.querySelector('.content');
-const apiKey = "AIzaSyDvPfGiFmJiDpn3_wKXzuX1c9T6Qa2gbCk";
+const apiKey = process.env.GOOGLE_API_KEY;
 const genAI = new GoogleGenerativeAI(apiKey);
 
 const model = genAI.getGenerativeModel({
